@@ -44,6 +44,12 @@ function bindEvents() {
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', handleCheckboxChange);
     });
+    
+    // 小单元格点击事件
+    const selectCells = document.querySelectorAll('.select-contact-cell');
+    selectCells.forEach(cell => {
+        cell.addEventListener('click', handleCellClick);
+    });
 }
 
 function initScrollTitleEffect() {
@@ -104,12 +110,12 @@ function getSelectedContacts() {
     const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
     
     checkedBoxes.forEach(checkbox => {
-        const label = checkbox.nextElementSibling;
-        const contactInfo = {
-            name: label.querySelector('.contact-name')?.textContent || '',
-            phone: label.querySelector('.contact-phone')?.textContent || ''
+        const contactInfo = checkbox.nextElementSibling;
+        const contactData = {
+            name: contactInfo.querySelector('.contact-name')?.textContent || '',
+            phone: contactInfo.querySelector('.contact-phone')?.textContent || ''
         };
-        selectedContacts.push(contactInfo);
+        selectedContacts.push(contactData);
     });
     
     return selectedContacts;
@@ -123,6 +129,32 @@ function handleCheckboxChange(event) {
     
     // 更新选择全部按钮状态
     updateSelectAllButton();
+    
+    // 更新小单元格选中状态
+    updateCellSelection(checkbox);
+}
+
+function handleCellClick(event) {
+    const cell = event.currentTarget;
+    const checkbox = cell.querySelector('input[type="checkbox"]');
+    
+    if (checkbox) {
+        checkbox.checked = !checkbox.checked;
+        updateCellSelection(checkbox);
+        updateSelectedCount();
+        updateSelectAllButton();
+    }
+}
+
+function updateCellSelection(checkbox) {
+    const cell = checkbox.closest('.select-contact-cell');
+    if (cell) {
+        if (checkbox.checked) {
+            cell.classList.add('selected');
+        } else {
+            cell.classList.remove('selected');
+        }
+    }
 }
 
 function updateSelectedCount() {

@@ -28,7 +28,10 @@
             <div id="merge-state" class="merge-state">
                 <!-- 第一个重复组 -->
                 <div class="duplicate-group-card">
-                    <div class="merged-contact-section">
+                    <!-- 标题1: Merged Contact -->
+                    <div class="card-section">
+                        <h3 class="section-title">Merged Contact</h3>
+                        <!-- 内容1: 小卡片 -->
                         <div class="merged-contact-card">
                             <div class="contact-info">
                                 <div class="contact-name">Mr. Lee</div>
@@ -37,24 +40,27 @@
                         </div>
                     </div>
 
-                    <div class="select-contacts-section">
+                    <!-- 标题2: Select Contacts to Merge -->
+                    <div class="card-section">
                         <div class="section-header">
                             <h3 class="section-title">Select Contacts to Merge</h3>
                             <button class="select-all-link" onclick="selectAllInGroup('group1')">Select All</button>
                         </div>
-                        <div class="contact-list">
-                            <div class="contact-item">
+                        <!-- 内容2: 多个小单元格 -->
+                        <div class="select-contacts-list">
+                            <div class="select-contact-cell">
                                 <input type="checkbox" name="group1" id="group1-1" checked>
-                                <label for="group1-1">
-                                    <span class="contact-phone">12369854789</span>
-                                </label>
+                                <div class="contact-info">
+                                    <div class="contact-name">Mr. Lee</div>
+                                    <div class="contact-phone">12369854789</div>
+                                </div>
                             </div>
-                            <div class="contact-item">
+                            <div class="select-contact-cell">
                                 <input type="checkbox" name="group1" id="group1-2">
-                                <label for="group1-2">
-                                    <span class="contact-name">Mr. Lee</span>
-                                    <span class="contact-phone">12369854789</span>
-                                </label>
+                                <div class="contact-info">
+                                    <div class="contact-name">Mr. Lee</div>
+                                    <div class="contact-phone">12369854789</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -62,7 +68,10 @@
 
                 <!-- 第二个重复组 -->
                 <div class="duplicate-group-card">
-                    <div class="merged-contact-section">
+                    <!-- 标题1: Merged Contact -->
+                    <div class="card-section">
+                        <h3 class="section-title">Merged Contact</h3>
+                        <!-- 内容1: 小卡片 -->
                         <div class="merged-contact-card">
                             <div class="contact-info">
                                 <div class="contact-name">Wong Wong</div>
@@ -71,24 +80,27 @@
                         </div>
                     </div>
 
-                    <div class="select-contacts-section">
+                    <!-- 标题2: Select Contacts to Merge -->
+                    <div class="card-section">
                         <div class="section-header">
                             <h3 class="section-title">Select Contacts to Merge</h3>
                             <button class="select-all-link" onclick="selectAllInGroup('group2')">Select All</button>
                         </div>
-                        <div class="contact-list">
-                            <div class="contact-item">
+                        <!-- 内容2: 多个小单元格 -->
+                        <div class="select-contacts-list">
+                            <div class="select-contact-cell">
                                 <input type="checkbox" name="group2" id="group2-1">
-                                <label for="group2-1">
-                                    <span class="contact-phone">12369854789</span>
-                                </label>
+                                <div class="contact-info">
+                                    <div class="contact-name">Wong Wong</div>
+                                    <div class="contact-phone">12369854789</div>
+                                </div>
                             </div>
-                            <div class="contact-item">
+                            <div class="select-contact-cell">
                                 <input type="checkbox" name="group2" id="group2-2">
-                                <label for="group2-2">
-                                    <span class="contact-name">Wong Wong</span>
-                                    <span class="contact-phone">12369854789 · 12369854789 · 123698...</span>
-                                </label>
+                                <div class="contact-info">
+                                    <div class="contact-name">Wong Wong</div>
+                                    <div class="contact-phone">12369854789 · 12369854789 · 123698...</div>
+                                </div>
                             </div>
                         </div>
                     </div>
