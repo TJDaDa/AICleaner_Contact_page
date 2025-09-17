@@ -1,0 +1,237 @@
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F8F9FD;
+    color: #000000;
+    line-height: 1.4;
+}
+
+.container {
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: #F8F9FD;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 头部样式 */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px 16px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.back-button {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.back-arrow {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #040404;
+    flex: 1;
+    text-align: center;
+    margin-right: 40px;
+}
+
+.header-action {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.select-all-button {
+    background: none;
+    border: none;
+    color: #007AFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 内容区域 */
+.content {
+    padding: 24px 16px;
+    flex: 1;
+}
+
+/* 空状态样式 */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    text-align: center;
+}
+
+.empty-illustration {
+    margin-bottom: 24px;
+}
+
+.cleaning-icon {
+    font-size: 48px;
+    opacity: 0.6;
+}
+
+.empty-text {
+    font-size: 18px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* 按钮样式 */
+.action-button-container {
+    padding: 16px;
+    position: sticky;
+    bottom: 0;
+    background-color: #F8F9FD;
+}
+
+.action-button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-button.primary {
+    background-color: #007AFF;
+    color: white;
+}
+
+.action-button.primary:hover {
+    background-color: #0056CC;
+}
+
+.action-button.secondary {
+    background-color: #8E8E93;
+    color: white;
+}
+
+.action-button.secondary:disabled {
+    background-color: #C7C7CC;
+    cursor: not-allowed;
+}
+
+.action-button.secondary:not(:disabled):hover {
+    background-color: #6D6D70;
+}
+
+/* 联系人项目样式 */
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    margin-bottom: 12px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item:hover {
+    background-color: #f8f8f8;
+}
+
+.contact-name {
+    font-size: 16px;
+    color: #040404;
+    font-weight: 500;
+}
+
+.contact-phone {
+    font-size: 14px;
+    color: #666;
+    margin-left: 8px;
+}
+
+/* 单选按钮样式 */
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    accent-color: #007AFF;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    accent-color: #007AFF;
+}
+
+/* 箭头样式 */
+.arrow {
+    width: 8px;
+    height: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Home indicator */
+.home-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 134px;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 375px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* 响应式图片支持 */
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+    .icon-image[src*="@2x"] {
+        content: attr(data-src-3x);
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .icon-image[src*="@2x"] {
+        content: attr(data-src-2x);
+    }
+}

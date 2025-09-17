@@ -1,0 +1,49 @@
+/* 不完整联系人页面特定样式 */
+
+.selection-state {
+    display: block;
+}
+
+.contact-list {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.contact-list .contact-item {
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-list .contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-list label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.contact-list .contact-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #040404;
+}
+
+.contact-list .contact-phone {
+    font-size: 16px;
+    font-weight: 500;
+    color: #040404;
+    margin-left: 0;
+}
+
+/* 选中状态样式 */
+.contact-item.selected {
+    background-color: #E3F2FD;
+}
+
+.contact-item.selected label {
+    color: #007AFF;
+}

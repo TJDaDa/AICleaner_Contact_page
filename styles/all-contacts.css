@@ -1,0 +1,41 @@
+/* 所有联系人页面特定样式 */
+
+.contact-list {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.contact-item {
+    padding: 16px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item:hover {
+    background-color: #f8f8f8;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info .contact-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #040404;
+    margin-bottom: 4px;
+}
+
+.contact-info .contact-phone {
+    font-size: 14px;
+    color: #666;
+    margin-left: 0;
+}

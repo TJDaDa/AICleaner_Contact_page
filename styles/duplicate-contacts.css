@@ -1,0 +1,75 @@
+/* 重复联系人页面特定样式 */
+
+.merge-state {
+    display: block;
+}
+
+.merge-section {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #040404;
+    margin-bottom: 12px;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info .contact-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #040404;
+    margin-bottom: 4px;
+}
+
+.contact-info .contact-phone {
+    font-size: 14px;
+    color: #666;
+    margin-left: 0;
+}
+
+.contact-list {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.contact-list .contact-item {
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-list .contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-list label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.contact-list .contact-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #040404;
+}
+
+.contact-list .contact-phone {
+    font-size: 14px;
+    color: #666;
+    margin-left: 8px;
+}

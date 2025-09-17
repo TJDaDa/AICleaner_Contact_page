@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incomplete Contacts</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/incomplete-contacts.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-button" onclick="goBack()">
+                <img src="../image/back icon.png" 
+                     data-src-2x="../image/back icon@2x.png"
+                     data-src-3x="../image/back icon@3x.png"
+                     alt="Back" class="back-arrow">
+            </button>
+            <h1 class="title">Incomplete Contacts</h1>
+            <div class="header-action">
+                <button class="select-all-button" id="select-all-btn">Select All</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- 选择状态 -->
+            <div id="selection-state" class="selection-state">
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <input type="checkbox" id="contact1" class="contact-checkbox">
+                        <label for="contact1">
+                            <span class="contact-phone">12369854789</span>
+                        </label>
+                    </div>
+                    <div class="contact-item">
+                        <input type="checkbox" id="contact2" class="contact-checkbox">
+                        <label for="contact2">
+                            <span class="contact-name">Mr. Lee</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 空状态 -->
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <div class="empty-illustration">
+                    <div class="cleaning-icon">🧹</div>
+                </div>
+                <div class="empty-text">No Incomplete Contacts</div>
+            </div>
+        </div>
+
+        <div class="action-button-container">
+            <button class="action-button secondary" id="delete-button" disabled>Delete Selected</button>
+        </div>
+
+        <div class="home-indicator"></div>
+    </div>
+
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/incomplete-contacts.js"></script>
+</body>
+</html>

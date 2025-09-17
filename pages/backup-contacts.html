@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Up Contacts</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/backup-contacts.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-button" onclick="goBack()">
+                <img src="../image/back icon.png" 
+                     data-src-2x="../image/back icon@2x.png"
+                     data-src-3x="../image/back icon@3x.png"
+                     alt="Back" class="back-arrow">
+            </button>
+            <h1 class="title" id="page-title">Back Up Contacts</h1>
+        </div>
+
+        <div class="content">
+            <!-- 空状态 -->
+            <div id="empty-state" class="empty-state">
+                <div class="empty-content">
+                    <!-- 空状态内容 -->
+                </div>
+            </div>
+
+            <!-- 备份列表状态 -->
+            <div id="backup-list-state" class="backup-list-state" style="display: none;">
+                <div class="backup-item" onclick="viewBackupDetails('2025-08-28-12-41')">
+                    <div class="backup-info">
+                        <div class="backup-date">Aug 28, 2025 at 12:41</div>
+                        <div class="backup-size">97 KB</div>
+                    </div>
+                    <div class="backup-arrow">
+                        <img src="../image/next icon.png" 
+                             data-src-2x="../image/next icon@2x.png"
+                             data-src-3x="../image/next icon@3x.png"
+                             alt="Next" class="arrow-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 备份详情状态 -->
+            <div id="backup-details-state" class="backup-details-state" style="display: none;">
+                <div class="contact-categories">
+                    <div class="category-section">
+                        <h3 class="category-title">A</h3>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <span class="contact-name">A.Mr. Lee</span>
+                                <span class="contact-phone">12369854789</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-name">A.Mr. Lee</span>
+                                <span class="contact-phone">12369854789</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-section">
+                        <h3 class="category-title">B</h3>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <span class="contact-name">B.Mr. Lee</span>
+                                <span class="contact-phone">12369854789</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-name">B.Mr. Lee</span>
+                                <span class="contact-phone">12369854789</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="delete-backup">
+                    <button class="delete-button">🗑️</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-button-container">
+            <button class="action-button primary" id="backup-button">Back Up Now</button>
+            <button class="action-button primary" id="restore-button" style="display: none;">Restore</button>
+        </div>
+
+        <div class="home-indicator"></div>
+    </div>
+
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/backup-contacts.js"></script>
+</body>
+</html>
