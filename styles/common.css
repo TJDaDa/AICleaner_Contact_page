@@ -27,6 +27,7 @@ body {
     padding: 20px 16px 24px;
     border-bottom: 1px solid #f0f0f0;
     position: relative;
+    min-height: 64px;
 }
 
 .back-button {
@@ -36,6 +37,9 @@ body {
     border: none;
     cursor: pointer;
     margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back-arrow {
@@ -51,6 +55,8 @@ body {
     flex: 1;
     text-align: center;
     margin-right: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .header-action {
@@ -63,15 +69,21 @@ body {
 .select-all-button {
     background: none;
     border: none;
-    color: #007AFF;
+    color: #017EFC;
     font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 /* 内容区域 */
 .content {
-    padding: 24px 16px;
+    padding: 0;
     flex: 1;
+    overflow-y: auto;
+    height: calc(100vh - 64px - 34px); /* 减去header和home indicator高度 */
 }
 
 /* 空状态样式 */
