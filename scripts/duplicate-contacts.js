@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化滚动标题效果
     initScrollTitleEffect();
     
-    // 更新选择状态
-    updateSelectAllButton();
+    // 初始化选择状态 - 默认全选
+    initSelectAllState();
 });
 
 function initPageState() {
@@ -132,6 +132,9 @@ function handleCheckboxChange(event) {
     
     // 更新小单元格选中状态
     updateCellSelection(checkbox);
+    
+    // 更新组内Select All按钮状态
+    updateGroupSelectAllButtons();
 }
 
 function handleCellClick(event) {
@@ -143,6 +146,7 @@ function handleCellClick(event) {
         updateCellSelection(checkbox);
         updateSelectedCount();
         updateSelectAllButton();
+        updateGroupSelectAllButtons();
     }
 }
 
@@ -162,16 +166,32 @@ function updateSelectedCount() {
     selectedContactsCount = checkedBoxes.length;
 }
 
+function initSelectAllState() {
+    // 默认全选所有复选框
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = true;
+        updateCellSelection(checkbox);
+    });
+    
+    // 更新计数和按钮状态
+    updateSelectedCount();
+    updateSelectAllButton();
+    updateGroupSelectAllButtons();
+}
+
 function updateSelectAllButton() {
     const selectAllBtn = document.getElementById('select-all-btn');
     const totalCheckboxes = document.querySelectorAll('input[type="checkbox"]').length;
     
     if (!selectAllBtn) return;
     
-    if (selectedContactsCount > 0) {
+    if (selectedContactsCount === totalCheckboxes && totalCheckboxes > 0) {
+        // 全部选中时显示Deselect All
         selectAllBtn.textContent = 'Deselect All';
         isSelectAllMode = false;
     } else {
+        // 不是全部选中时显示Select All
         selectAllBtn.textContent = 'Select All';
         isSelectAllMode = true;
     }
@@ -184,19 +204,19 @@ function toggleSelectAll() {
         // 全选
         checkboxes.forEach(checkbox => {
             checkbox.checked = true;
+            updateCellSelection(checkbox);
         });
-        selectAllBtn.textContent = 'Deselect All';
-        isSelectAllMode = false;
     } else {
         // 取消全选
         checkboxes.forEach(checkbox => {
             checkbox.checked = false;
+            updateCellSelection(checkbox);
         });
-        selectAllBtn.textContent = 'Select All';
-        isSelectAllMode = true;
     }
     
     updateSelectedCount();
+    updateSelectAllButton();
+    updateGroupSelectAllButtons();
 }
 
 function selectAllInGroup(groupName) {
@@ -208,10 +228,31 @@ function selectAllInGroup(groupName) {
     
     groupCheckboxes.forEach(checkbox => {
         checkbox.checked = shouldSelectAll;
+        updateCellSelection(checkbox);
     });
     
     updateSelectedCount();
     updateSelectAllButton();
+    updateGroupSelectAllButtons();
+}
+
+function updateGroupSelectAllButtons() {
+    // 更新每个组内的Select All按钮文本
+    const groups = ['group1', 'group2']; // 可以根据实际情况动态获取
+    
+    groups.forEach(groupName => {
+        const groupCheckboxes = document.querySelectorAll(`input[name="${groupName}"]`);
+        const checkedCount = document.querySelectorAll(`input[name="${groupName}"]:checked`).length;
+        const groupSelectAllBtn = document.querySelector(`button[onclick="selectAllInGroup('${groupName}')"]`);
+        
+        if (groupSelectAllBtn && groupCheckboxes.length > 0) {
+            if (checkedCount === groupCheckboxes.length) {
+                groupSelectAllBtn.textContent = 'Deselect All';
+            } else {
+                groupSelectAllBtn.textContent = 'Select All';
+            }
+        }
+    });
 }
 
 function checkDuplicates() {

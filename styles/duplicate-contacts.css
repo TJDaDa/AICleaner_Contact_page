@@ -1,5 +1,15 @@
 /* 重复联系人页面特定样式 */
 
+/* 隐藏滚动条 */
+.content {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
 /* 表头标题 */
 .table-header-title {
     font-size: 20px;
@@ -7,8 +17,7 @@
     color: #040404;
     padding: 20px 16px 16px;
     background-color: #F8F9FD;
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 10;
     transition: opacity 0.3s ease;
 }
